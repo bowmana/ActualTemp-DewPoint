@@ -1,0 +1,46 @@
+/*Alex Bowman
+ * 9/20
+ * csc111
+ * Create a program that inputs the 3 sets of 2 inputs needed to calculate
+ * Actual Temperature, Dewpoint, and Relative Humidity
+ * agbowman0001@student.stcc.edu
+ */
+public class weather {
+
+	import java.lang.Math;
+	import java.until.Scanner;
+	public static void main(String[] args) {
+
+			
+		Scanner sc = new Scanner(System.in);
+		float RH, TD, T;
+		{
+		System.out.print("Enter Dewpoint: ");
+		 TD = sc.nextdouble();
+		 System.out.print("Enter Temp: ");
+		 T = sc.nextdouble();
+		 
+		RH =100*(EXP((17.625*TD)/(243.04+TD))/EXP((17.625*T)/(243.04+T)));//not entirely sure how to import the math library correctly yet
+		
+		System.out.println("RH is: " + RH);
+		{
+		System.out.print("Enter RH: ");
+		 RH = sc.nextdouble();
+		 System.out.print("Enter Temp: ");
+		 T = sc.nextdouble();
+		 
+		 TD: =243.04*(LN(RH/100)+((17.625*T)/(243.04+T)))/(17.625-LN(RH/100)-((17.625*T)/(243.04+T)));
+		
+		 System.out.println("Dewpoint is: " + TD);
+		 {
+			System.out.print("Enter Dewpoint: ");
+			 TD = sc.nextdouble();
+			 System.out.print("Enter RH: ");
+			 RH = sc.nextdouble();
+			  T: =243.04*(((17.625*TD)/(243.04+TD))-LN(RH/100))/(17.625+LN(RH/100)-((17.625*TD)/(243.04+TD)));
+		 System.out.println("Temp is: " + T);
+		
+	}
+	}
+	}
+	}
